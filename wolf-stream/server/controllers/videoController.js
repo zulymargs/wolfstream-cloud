@@ -204,4 +204,4 @@ video.route("/upload").post(upload.single("videoFile"), async (req, res) => {
 //   });
 // });
 
-// module.exports = video;
+ module.exports = video;

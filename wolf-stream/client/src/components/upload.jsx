@@ -3,55 +3,30 @@ import { useState } from "react";
 
 const Upload = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-    category: "",
-    file: null,
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleFileChange = (e) => {
-    setFormData({
-      ...formData,
-      file: e.target.files[0],
-    });
-  };
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [file, setFile] = useState("");
 
   const handleHome = () => {
     navigate("/home");
   };
 
-  const category = (value) => {
-    // Do something with the selected category value
-    console.log(value);
-    setFormData({
-      ...formData,
-      category: value,
-    });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const url = "http://localhost:8000/upload"; // Replace with your server URL
-
-    const formDataToSend = new FormData();
-    formDataToSend.append("videoFile", formData.file);
-    formDataToSend.append("title", formData.title);
-    formDataToSend.append("description", formData.description);
-    formDataToSend.append("category", formData.category);
+    const videoData = {
+      title,
+      description,
+      category,
+      file,
+    };
+    console.log(videoData);
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch("http://localhost:8000/upload", {
         method: "POST",
-        body: formDataToSend,
+        body: JSON.stringify(videoData),
       });
 
       if (response.ok) {
@@ -87,7 +62,7 @@ const Upload = () => {
                 id="videoFile"
                 accept=".mp4"
                 required
-                onChange={handleFileChange}
+                onChange={(e) => setFile(e.target.value)}
               />
               <br />
               <label htmlFor="title">Title:</label>
@@ -95,8 +70,9 @@ const Upload = () => {
                 type="text"
                 name="title"
                 id="title"
+                value={title}
                 required
-                onChange={handleChange}
+                onChange={(e) => setTitle(e.target.value)}
               />
               <br />
 
@@ -105,8 +81,9 @@ const Upload = () => {
                 type="text"
                 name="description"
                 id="description"
+                value={description}
                 required
-                onChange={handleChange}
+                onChange={(e) => setDescription(e.target.value)}
               />
               <br />
 
@@ -114,7 +91,8 @@ const Upload = () => {
               <select
                 name="category"
                 className="category"
-                onChange={(e) => category(e.target.value)}
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
               >
                 <option value="blank"></option>
                 <option value="kids">Kids</option>

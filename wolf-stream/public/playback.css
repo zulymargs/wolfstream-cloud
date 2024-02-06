@@ -1,0 +1,188 @@
+body {
+    font-size: 18px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b263e;
+    height: 100vh;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 50px;
+}
+
+button {
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background: #24527a;
+    display: inline-flex;
+}
+
+button:hover {
+    background: #073a66;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.container {
+    text-align: center;
+}
+
+#video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video {
+    max-width: 50%;
+    height: auto;
+}
+
+#interactions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#interactions button {
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background: #24527a;
+    display: inline-flex;
+
+    margin: 0 10px; /* Add spacing between buttons */
+}
+
+#interactions button:hover {
+    background: #073a66;
+}
+
+#interactions button:active {
+    transform: scale(0.98);
+}
+
+
+/* ---- ---- ---- HEADER ---- ---- ---- */
+.header {
+	grid-area: header;
+	padding: 0 20px;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: 20px;
+	grid-template-areas: "iconos busqueda logo";
+	background-color: #073a66;
+	border-radius: 15px;
+}
+
+.header .contenedor-logo {
+	grid-area: logo;
+	display: flex;
+	align-items: center;
+}
+
+.header .contenedor-logo .boton-menu {
+	border: none;
+	padding: 10px;
+	background: none;
+	cursor: pointer;
+	font-size: 18px;
+	border-radius: 100px;
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;
+}
+
+.header .contenedor-logo .categorias {
+	margin: 0 30px;
+	width: 90px;
+	border-radius: 100px;
+	border-width: 2px;
+	padding: 3px 0;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.header .contenedor-logo .boton-menu:hover {
+	background: #E7E7E7;
+}
+
+.header .barra-busqueda {
+	grid-area: busqueda;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header .barra-busqueda input {
+	min-width: 60%;
+	padding: 0 15px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 50px;
+}
+
+.header .barra-busqueda button:hover {
+	background: #f5f5f5;
+}
+
+.header .botones-header {
+	grid-area: iconos;
+	display: flex;
+	align-items: center;
+}
+
+.header .botones-header button {
+	background: none;
+	border: none;
+	width: 50px;
+	height: 50px;
+	font-size: 18px;
+	padding: 7px 12px;
+	border-radius: 100px;
+	color: lightgrey;
+	margin-right: 20px;
+	cursor: pointer;
+	margin-right: -5px;
+}
+
+.header .botones-header button:hover {
+	background: lightgray;
+	color: #073a66;
+}
+
+.header .botones-header .avatar {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.header .botones-header .avatar img {
+	vertical-align: top;
+	width: 100%;
+	border-radius: 100px;
+}

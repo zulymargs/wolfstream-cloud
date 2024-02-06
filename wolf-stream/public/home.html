@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Home | Wolf-Stream</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap"> 
+	<link rel="stylesheet" href="home.css">
+</head>
+<body>
+	<div class="contenedor" id="contenedor">
+		<header class="header">
+			<div class="botones-header">
+				<a href="#" class="avatar"><img src="guest-user.jpg" alt="perfil"></a>
+				<a href=""><button id="home"><span class="material-symbols-outlined">home</span></button></a>
+				<a href="#"><button id="upload"><span class="material-symbols-outlined">upload</span></button></a>
+			</div>
+
+			<div class="barra-busqueda">
+				<input id="searchbar" onkeyup="search_video()" type="text" name="search" placeholder="Search"></div>
+
+			<div class="contenedor-logo">
+				<select name="categorias" class="categorias" onclick="category(value)">
+					<option value="category">Categories</option>
+					<option value="kids">Kids</option>
+					<option value="sport">Sport</option>
+					<option value="vehicles">Vehicles</option>
+					<option value="music">Music</option>
+				</select>
+			</div>
+
+		</header>
+		
+		<main class="main">
+			<h3 class="titulo">Main Page</h3>
+			<div class="grid-videos">
+				<a href="playback.html?video_id=1"><video src="videos/man_surfing (1080p).mp4" class="video" controls>sports surf</video></a>
+				<a href="playback.html?video_id=2"><video src="videos/pexels-c-technical-5803089 (2160p).mp4" class="video" controls>sports vehicles motorcycle bikes</video></a>
+				<a href="playback.html?video_id=3"><video src="videos/pexels-pavel-danilyuk-5790072 (1080p).mp4" class="video" controls>sports vehicles bicycle bikes</video></a>
+				<a href="playback.html?video_id=4"><video src="videos/pexels-saruul-saruulaa-5489581 (1080p).mp4" class="video" controls>sports futbol</video></a>
+				<a href="playback.html?video_id=5"><video src="videos/pexels-taryn-elliott-5309354 (1080p).mp4" class="video" controls>vehicles cars</video></a>
+				<a href="playback.html?video_id=6"><video src="videos/pexels-taryn-elliott-5309381 (1080p).mp4" class="video" controls>vehicles cars</video></a>
+				<a href="playback.html?video_id=7"><video src="videos/pexels_videos_1580507 (1080p).mp4" class="video" controls>kids </video></a>
+				<a href="playback.html?video_id=8"><video src="videos/pexels_videos_1585618 (720p).mp4" class="video" controls>sports basketball</video></a>
+				<a href="playback.html?video_id=9"><video src="videos/pexels_videos_1722591 (1080p) (1).mp4" class="video" controls>kids music</video></a>
+				<a href="playback.html?video_id=10"><video src="videos/pexels_videos_1908423 (2160p).mp4" class="video" controls>kids</video></a>
+				<a href="playback.html?video_id=11"><video src="videos/pexels_videos_2099568 (1080p).mp4" class="video" controls>vehicles cars</video></a>
+				<a href="playback.html?video_id=12"><video src="videos/pexels_videos_2324274 (2160p).mp4" class="video" controls>sports skydiving</video></a>
+				<a href="playback.html?video_id=13"><video src="videos/pexels_videos_2430839 (2160p).mp4" class="video" controls>sports baseball </video></a>
+				<a href="playback.html?video_id=14"><video src="videos/pexels_videos_2657261 (2160p).mp4" class="video" controls>sports futbol </video></a>
+				<a href="playback.html?video_id=15"><video src="videos/pexels_videos_3367 (1080p).mp4" class="video" controls>sports vehicles motorcycle bikes</video></a>
+				<a href="playback.html?video_id=16"><video src="videos/pexels_videos_992695 (1080p).mp4" class="video" controls>sports tennis</video></a>
+				<a href="playback.html?video_id=17"><video src="videos/production_id_4729195 (1080p).mp4" class="video" controls>sports futbol</video></a>
+				<a href="playback.html?video_id=18"><video src="videos/production_id_5052676 (1080p).mp4" class="video" controls>vehicles motorcycle bikes</video></a>
+				<a href="playback.html?video_id=19"><video src="videos/video (2160p) (1).mp4" class="video" controls>kids</video></a>
+				<a href="playback.html?video_id=20"><video src="videos/video (1080p).mp4" class="video" controls>sports bow and arrow</video></a>
+			</div>
+		</main>
+
+		<footer>&#169; Group 3 and 4 <br> Zulymar García, Eddy Figueroa, Ismael López and Dereck Declet </footer>
+		
+	</div>
+
+	<script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>Login and Register | Wolf-Stream</title>
+</head>
+<body>  
+    <form id="login" class="center" method="post" action="home.html">
+        <fieldset> 
+            <legend>Login</legend>
+            <label for="username">Username:</label>
+            <input type="text" name="user" id="username">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+
+            <input type="submit" id="submit" value="submit">
+            <button id="signIn">Sign In</button>
+        </fieldset>
+        <div id="logError"></div>
+    </form>
+        <form id="register" class="center" method="post" action="home.html">
+            <fieldset>
+                <legend>Register</legend>
+                <label for="createUsername">Create username:</label>
+                <input type="text" name="username" id="createUserName">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+                <label for="createPassword">Create password:</label>
+                <input type="password" name="password" id="createPassword">
+                <label for="confirmPassword">Confirm password:</label>
+                <input type="password" id="confirmPassword">
+                <div id="pswMatch"></div>
+                <label for="userRole">User Role:</label>
+                <select id="userRole">
+                    <option value="blank"></option>
+                    <option value="creator">Content Creator</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+
+                <input type="submit" id="sign" value="submit">
+                <button id="log">Login</button>
+            </fieldset>
+            <div id="signError"></div>
+        </form>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="login.js"></script>
+</body>
+</html>

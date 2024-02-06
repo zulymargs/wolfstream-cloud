@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Upload | Wolf-Stream</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap">
+    <link rel="stylesheet" href="upload.css"> <!-- You can link your own CSS file here -->
+</head>
+
+<body>
+    <div class="contenedor" id="contenedor">
+        <header class="header">
+            <!-- Your header content, including navigation buttons -->
+        </header>
+        <div class="container">
+            <!-- <h1>Wolf-Stream</h1> -->
+            <!-- <form id="upload" class="center" method="post" action="/upload"> -->
+            <form id="upload" class="center" method="post" action="upload/uploaded" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Upload new video</legend>
+                    <!-- <input type="file" name="videoFile" id="videoFile" accept=".mp4" required><br> -->
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" required />
+
+                    <!-- <label for="category">Category:</label>
+                    <input type="text" name="category" id="category" required><br> -->
+
+                    <label for="description">Description:</label>
+                    <input type="text" name="description" id="description" required />
+
+                    <label>Category:</label>
+                    <select name="category" class="category" onclick="category(value)">
+                        <option value="blank"></option>
+                        <option value="kids">Kids</option>
+                        <option value="sport">Sport</option>
+                        <option value="vehicles">Vehicles</option>
+                        <option value="music">Music</option>
+                    </select>
+                    <input type="file" name="videoFile" id="videoFile" accept=".mp4" required />
+                    <input type="submit" id="submit" name="submit" value="Add video">
+                    <input type="button" id="home" name="home" value="Home">
+                </fieldset>
+            </form>
+        </div>
+        <!-- <footer>&#169; Group 3 and 4 <br> Zulymar García, Eddy Figueroa, Ismael López, and Dereck Declet </footer> -->
+    </div>
+    <!-- Include the external JavaScript file -->
+    <script src="upload.js"></script>
+</body>
+
+</html>

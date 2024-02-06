@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
+    <title>Login | Wolf-Stream</title>
+</head>
+<body>  
+   <div class="container">
+    <h1 >Wolf-Stream</h1>
+    <form id="login" class="center" method="post" action="/login">
+        <fieldset> 
+            <legend>Login</legend>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username"> 
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+            <label>User Role:</label>
+            <select id="userRole" class="userRole" name="userRole">
+                <option value="blank"></option>
+                <option value="creator">Content Creator</option>
+                <option value="viewer">Viewer</option>
+            </select>
+            <input type="submit" id="submit" value="submit">
+            <input type="button" id="signIn" value="Sign in">
+        </fieldset>
+        <div id="logError">
+        </div>
+    </form>
+   </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

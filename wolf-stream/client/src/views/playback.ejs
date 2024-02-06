@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="playback.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap"> 
+	<link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
+
+    <title>Video Playback</title>
+</head>
+<body>
+    <h1><%= video.title %></h1>
+
+    <div id="video-container">
+        <video src="<%= video.src %>" class="video" controls><%= video.title %></video>
+
+    </div>
+
+    <div id="interactions">
+        <button id="like">Like</button>
+        <button id="comment">Comment</button>
+        <button id="share">Share</button>
+    </div>
+    <br>
+    <br>
+    <div class="botones-header">
+        <!-- <a href="#" class="avatar"><img src="guest-user.jpg" alt="perfil"></a> -->
+        <a href="javascript:history.back()"><button id="home"><span class="material-symbols-outlined">home</span></button></a>
+
+    </div>
+
+    <script src="playback.js"></script>
+</body>
+</html>

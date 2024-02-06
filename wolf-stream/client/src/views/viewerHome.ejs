@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Home | Wolf-Stream</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap"> 
+	<link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
+
+	<link rel="stylesheet" href="home.css">
+</head>
+<body>
+	<div class="contenedor" id="contenedor">
+		<header class="header">
+			<div class="botones-header">
+				<a href="#" class="avatar"><img src="guest-user.jpg" alt="perfil"></a>
+				<a href=""><button id="home"><span class="material-symbols-outlined">home</span></button></a>
+				<!-- <a href="#"><button id="upload"><span class="material-symbols-outlined">upload</span></button></a> -->
+
+			</div>
+
+			<div class="barra-busqueda">
+				<input id="searchbar" onkeyup="search_video()" type="text" name="search" placeholder="Search"></div>
+			<div class="contenedor-logo">
+				<select name="categorias" class="categorias" onclick="category(value)">
+					<option value="category">Categories</option>
+					<option value="kids">Kids</option>
+					<option value="sport">Sport</option>
+					<option value="vehicles">Vehicles</option>
+					<option value="music">Music</option>
+				</select>
+			</div>
+		</header> 
+		
+		<main class="main">
+			<!-- <h1 >Wolf-Stream</h1> -->
+			<h3 class="titulo">Wolf Stream</h3>
+			<div class="grid-videos">
+				<% videos.forEach((video, index) => { %>
+					<a href="/playback/<%= index %>">
+						<video src="<%= video.src %>" class="video" controls><%= video.title %></video>
+					</a>
+				<% }); %>
+			</div>
+		</main>
+
+		<footer>&#169; Group 3 and 4 <br> Zulymar García, Eddy Figueroa, Ismael López and Dereck Declet </footer>
+		
+	</div>
+
+	<script src="././home.js"></script>
+</body>
+</html>
+		
+	

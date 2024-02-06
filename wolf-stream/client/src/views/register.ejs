@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
+    <title>Register | Wolf-Stream</title>
+</head>
+<body>  
+    <div class="container">
+        <h1 >Wolf-Stream</h1>
+        <form id="register" class="center" method="post" action="/register">
+            <fieldset>
+                <legend>Register</legend>
+                <label >Create username:</label>
+                <input type="text" name="username" id="username">
+                <label >Email:</label>
+                <input type="email" name="email" id="email">
+                <label >Create password:</label>
+                <input type="password" name="password" id="password">
+                <label >Confirm password:</label>
+                <input type="password" name="confirmPassword" id="confirmPassword">
+                <div id="pswMatch"></div>
+                <label>User Role:</label>
+                <select id="userRole" class="userRole" name="userRole">
+                    <option value="blank"></option>
+                    <option value="creator">Content Creator</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+                <input type="submit" id="sign" value="submit">
+                <input type="button" id="log"value="Log in">
+            </fieldset>
+        </form>
+    </div> 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>

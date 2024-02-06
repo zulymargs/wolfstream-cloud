@@ -1,0 +1,123 @@
+
+body {
+    font-size: 18px;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b263e; 
+
+}
+
+h1{
+    font-family: 'Rubik Mono One';
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 3px black, 0 0 5px black;
+    font-size: 55px;
+    /* display: flex; */
+}
+
+.center {
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background: white;
+    position: relative;
+}
+
+.center input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #dddd;
+    outline: none;
+    background: #dddd;
+}
+
+input:focus {
+    border-color: #5dacbd;
+    background-color: white;
+}
+
+#submit {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background: #24527a;
+}
+
+#submit:hover {
+    background: #073a66;
+}
+
+#submit:active {
+    transform: scale(0.98);
+}
+
+#home, input [type="submit"] {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background: #24527a;
+}
+
+#home:hover,input [type="submit"]:hover {
+    background: #073a66;
+}
+
+#home:active {
+    transform: scale(0.98);
+}
+
+button, input[type=button] {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background: #24527a;
+}
+
+button:hover,input[type=button]:hover {
+    background: #073a66;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.logError, .signError {
+    color: red;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.container{
+    padding: 16px;
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html> 
+<html> 
+
+<body> 
+	<h3> 
+		<%= author.name %> has skill on 
+	</h3> 
+
+	<ul> 
+		<% author.skills.forEach((skill)=>{%> 
+			<li><%=skill%></li> 
+		<%});%> 
+	</ul> 
+
+</body> 
+</html>

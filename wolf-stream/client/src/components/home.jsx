@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from './headerCreator'; // Import the Header component
 
 const Home = () => {
   const contenedorRef = useRef(null);
@@ -7,9 +8,7 @@ const Home = () => {
   const [videos, setVideos] = useState([]);
   const navigate = useNavigate();
 
-  // Initialize filteredVideos with the same value as videos
   const [filteredVideos, setFilteredVideos] = useState([]);
-
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   useEffect(() => {
@@ -30,8 +29,7 @@ const Home = () => {
         const response = await fetch('http://localhost:8000/home/videos');
         const data = await response.json();
         setVideos(data);
-        // Initialize filteredVideos with the same value as videos
-        setFilteredVideos(data);
+        setFilteredVideos(data); // Initialize filteredVideos with all videos
       } catch (error) {
         console.error("Error fetching data from the database:", error);
       }
@@ -90,33 +88,11 @@ const Home = () => {
       />
 
       <div className="contenedor" ref={contenedorRef} style={{ height: '600px' }}>
-        <header className="header">
-          <div className="botones-header">
-            <a href="#" className="avatar">
-              <img src="Fotos/guest-user.jpg" alt="perfil" />
-            </a>
-            <a href="">
-              <button id="home">
-                <span className="material-symbols-outlined">home</span>
-              </button>
-            </a>
-            <a href="#">
-              <button id="upload" onClick={handleUpload}>
-                <span className="material-symbols-outlined">upload</span>
-              </button>
-            </a>
-          </div>
+        {/* Use the Header component */}
+        <Header handleUpload={handleUpload} searchVideo={searchVideo} />
 
-          <div className="barra-busqueda">
-            <input
-              id="searchbar"
-              onChange={(e) => searchVideo(e.target.value)}
-              type="text"
-              name="search"
-              placeholder="Search"
-            />
-          </div>
-
+        <main className="main">
+          <h3 className="titulo">Wolf Stream</h3>
           <div className="contenedor-logo">
             <select name="categorias" className="categorias" onChange={(e) => searchVideo(e.target.value)}>
               <option value="category">Categories</option>
@@ -126,12 +102,7 @@ const Home = () => {
               <option value="music">Music</option>
             </select>
           </div>
-        </header>
-
-        <main className="main">
-          <h3 className="titulo">Wolf Stream</h3>
           <div className="grid-videos">
-            {/* Render filteredVideos instead of videos */}
             {filteredVideos.map((video) => (
               <div key={video._id} className="video" onClick={() => handlePlayback(video)}>
                 <video poster={video.poster} className="video">

@@ -7,8 +7,9 @@ const Home = () => {
   const [videos, setVideos] = useState([]);
   const navigate = useNavigate();
 
-  // Nuevos
+  // Initialize filteredVideos with the same value as videos
   const [filteredVideos, setFilteredVideos] = useState([]);
+
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   useEffect(() => {
@@ -24,12 +25,13 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    // Simulando la obtención de datos desde una base de datos
     const fetchDataFromDatabase = async () => {
       try {
         const response = await fetch('http://localhost:8000/home/videos');
         const data = await response.json();
         setVideos(data);
+        // Initialize filteredVideos with the same value as videos
+        setFilteredVideos(data);
       } catch (error) {
         console.error("Error fetching data from the database:", error);
       }
@@ -47,8 +49,6 @@ const Home = () => {
       }
     }
   }, [anchoVentana]);
-
-  // search bar & category filter code
 
   const searchVideo = (val) => {
     const input = val ? val.toLowerCase() : '';
@@ -131,6 +131,7 @@ const Home = () => {
         <main className="main">
           <h3 className="titulo">Wolf Stream</h3>
           <div className="grid-videos">
+            {/* Render filteredVideos instead of videos */}
             {filteredVideos.map((video) => (
               <div key={video._id} className="video" onClick={() => handlePlayback(video)}>
                 <video poster={video.poster} className="video">

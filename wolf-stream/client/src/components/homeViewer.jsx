@@ -1,23 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HomeViewer = () => {
-
   const contenedorRef = useRef(null);
   const [anchoVentana, setAnchoVentana] = useState(window.innerWidth);
   const [videos, setVideos] = useState([]);
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const handleResize = () => {
       setAnchoVentana(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -25,14 +23,13 @@ const HomeViewer = () => {
     // Simulando la obtención de datos desde una base de datos
     const fetchDataFromDatabase = async () => {
       try {
-        const response = await fetch('http://localhost8000/home'); // Reemplaza 'URL_DEL_BACKEND' con la URL real de tu endpoint en el backend
+        const response = await fetch("http://localhost8000/home"); // Reemplaza 'URL_DEL_BACKEND' con la URL real de tu endpoint en el backend
         const data = await response.json();
         setVideos(data);
       } catch (error) {
-        console.error('Error fetching data from the database:', error);
+        console.error("Error fetching data from the database:", error);
       }
     };
-
 
     fetchDataFromDatabase();
   }, []);
@@ -40,13 +37,12 @@ const HomeViewer = () => {
   useEffect(() => {
     if (contenedorRef.current) {
       if (anchoVentana <= 768) {
-        contenedorRef.current.classList.remove('active');
+        contenedorRef.current.classList.remove("active");
       } else {
-        contenedorRef.current.classList.add('active');
+        contenedorRef.current.classList.add("active");
       }
     }
   }, [anchoVentana]);
-
 
   // search bar & category filter code
 
@@ -89,19 +85,37 @@ const HomeViewer = () => {
     navigate(`/playback/${videoId}`);
   };
 
-
   return (
     <>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      />
 
-
-      <div className="contenedor" ref={contenedorRef} style={{ height: '600px' }}>
+      <div
+        className="contenedor"
+        ref={contenedorRef}
+        style={{ height: "600px" }}
+      >
         <header className="header">
           <div className="botones-header">
-            <a href="#" className="avatar"><img src="Fotos/guest-user.jpg" alt="perfil" /></a>
-            <a href=""><button id="home"><span className="material-symbols-outlined">home</span></button></a>
-            <a href="#"><button id="upload"><span className="material-symbols-outlined">upload</span></button></a>
+            <a href="#" className="avatar">
+              <img src="Fotos/guest-user.jpg" alt="perfil" />
+            </a>
+            <a href="">
+              <button id="home">
+                <span className="material-symbols-outlined">home</span>
+              </button>
+            </a>
+            <a href="#">
+              <button id="upload">
+                <span className="material-symbols-outlined">upload</span>
+              </button>
+            </a>
           </div>
 
           <div className="barra-busqueda">
@@ -115,7 +129,11 @@ const HomeViewer = () => {
           </div>
 
           <div className="contenedor-logo">
-            <select name="categorias" className="categorias" onChange={(e) => category(e.target.value)}>
+            <select
+              name="categorias"
+              className="categorias"
+              onChange={(e) => category(e.target.value)}
+            >
               <option value="category">Categories</option>
               <option value="kids">Kids</option>
               <option value="sport">Sport</option>
@@ -123,7 +141,6 @@ const HomeViewer = () => {
               <option value="music">Music</option>
             </select>
           </div>
-
         </header>
 
         <main className="main">
@@ -131,7 +148,11 @@ const HomeViewer = () => {
           <div className="grid-videos">
             {/* Dynamic rendering of videos */}
             {videos.map((video) => (
-              <a key={video._id} onClick={handlePlayback(video._id)} className="video">
+              <a
+                key={video._id}
+                onClick={handlePlayback(video._id)}
+                className="video"
+              >
                 <video poster={video.poster} className="video">
                   <source src={video.src} type="video/mp4" />
                   Tu navegador no admite el elemento de video.

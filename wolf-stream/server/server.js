@@ -21,6 +21,7 @@ const video = require("./controllers/videoController");
 const home = require("./controllers/homeController");
 const creator = require("./controllers/creatorController");
 const playback = require("./controllers/playbackController");
+const social = require("./controllers/socialController");
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,9 +49,9 @@ app.get("/test", async (req, res) => {
 });
 
 app.use("/user", user); //Handles login and register functionalities
-app.use("/home",home);
+app.use("/home", home);
 app.use("/playback", playback);
-
 app.use("/upload", video);
+app.use("/social", social);
 // // app.use("/Home",creator);
 // //  app.use("/playback",playback)
